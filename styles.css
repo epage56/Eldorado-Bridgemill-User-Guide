@@ -280,7 +280,6 @@ footer p {
 /* Highlight terms for milling and turning */
 .highlight-term {
     font-weight: 700;
-    font-style: italic;
     position: relative;
     text-decoration: none;
     color: inherit;
