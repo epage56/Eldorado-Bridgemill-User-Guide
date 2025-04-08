@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Feeds and Speeds Calculator</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header>
+            <h1>El Dorado Bridge Mill Guide</h1>
+            <p>Zero experience to CNC parts in one day</p>
+        </header>
+
+        <!-- Centered nav menu -->
+        <nav>
+            <div class="nav-container">
+                <a href="index.html">Home</a>
+                <a href="index.html#milling">Milling</a>
+                <a href="index.html#turning">Turning</a>
+                <a href="speeds-and-feeds.html">Feeds & Speeds</a>
+            </div>
+        </nav>
+
+        <div class="container">
+            <section class="content-section">
+                <h2>Feeds and Speeds Calculator</h2>
+                <p>
+                    Select your material and operation type below to generate
+                    recommended RPM, feed rate, depth of cut, and stepover
+                    values. Using the correct cutting parameters will improve
+                    surface finish, extend tool life, and reduce the risk of
+                    tool breakage.
+                </p>
+
+                <form id="calculator-form">
+                    <div class="step">
+                        <label for="material">Material</label>
+                        <select id="material" required>
+                            <option value="">-- Select Material --</option>
+                            <option value="steel">Steel</option>
+                            <option value="aluminum">Aluminum</option>
+                            <option value="delrin">Delrin</option>
+                            <option value="copper">Copper</option>
+                            <option value="brass">Brass</option>
+                            <option value="pvc">PVC</option>
+                        </select>
+                    </div>
+
+                    <div class="step">
+                        <label for="slotting">Operation Type</label>
+                        <select id="slotting" required>
+                            <option value="slotting">Slotting</option>
+                            <option value="non-slotting">Non-slotting</option>
+                        </select>
+                    </div>
+
+                    <div class="step">
+                        <label for="cut-type">Cut Style</label>
+                        <select id="cut-type" required>
+                            <option value="roughing">Roughing</option>
+                            <option value="finishing">Finishing</option>
+                        </select>
+                    </div>
+
+                    <div class="step">
+                        <label for="flutes">Number of Flutes</label>
+                        <input
+                            type="number"
+                            id="flutes"
+                            value="2"
+                            min="1"
+                            required
+                        />
+                    </div>
+
+                    <div class="step">
+                        <label for="diameter">Cutter Diameter (inches)</label>
+                        <input
+                            type="number"
+                            id="diameter"
+                            value="0.25"
+                            step="0.01"
+                            min="0.01"
+                            required
+                        />
+                    </div>
+
+                    <button class="download-button" type="submit">
+                        Calculate
+                    </button>
+                </form>
+
+                <div id="result" class="tutorial-content"></div>
+            </section>
+        </div>
+
+        <footer>
+            <p>CNC Mill & Lathe Usage Guide | Created for Student Education</p>
+            <p>Safety First - Always Ask for Assistance When Uncertain</p>
+        </footer>
+
+        <script>
+            const materialData = {
+                steel: {
+                    sfm: 100,
+                    chipload: 0.002,
+                    depth: 0.05,
+                    stepover: 0.4,
+                },
+                aluminum: {
+                    sfm: 400,
+                    chipload: 0.005,
+                    depth: 0.125,
+                    stepover: 0.6,
+                },
+                delrin: {
+                    sfm: 600,
+                    chipload: 0.008,
+                    depth: 0.15,
+                    stepover: 0.65,
+                },
+                copper: {
+                    sfm: 300,
+                    chipload: 0.004,
+                    depth: 0.08,
+                    stepover: 0.5,
+                },
+                brass: { sfm: 500, chipload: 0.005, depth: 0.1, stepover: 0.5 },
+                pvc: { sfm: 800, chipload: 0.01, depth: 0.2, stepover: 0.7 },
+            };
+
+            const form = document.getElementById("calculator-form");
+            const result = document.getElementById("result");
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const material = document.getElementById("material").value;
+                const slotting = document.getElementById("slotting").value;
+                const cutType = document.getElementById("cut-type").value;
+                const flutes = parseInt(
+                    document.getElementById("flutes").value,
+                );
+                const diameter = parseFloat(
+                    document.getElementById("diameter").value,
+                );
+
+                if (!materialData[material] || diameter <= 0) {
+                    result.innerHTML = `<p>Please provide valid inputs.</p>`;
+                    return;
+                }
+
+                let { sfm, chipload, depth, stepover } = materialData[material];
+
+                if (slotting === "slotting") stepover *= 0.5;
+                if (cutType === "finishing") {
+                    chipload *= 0.5;
+                    depth *= 0.5;
+                }
+
+                const rpm = (sfm * 3.82) / diameter;
+                const feedRate = rpm * flutes * chipload;
+
+                result.innerHTML = `
+        <h3>Recommended Parameters</h3>
+        <ul class="feature-list">
+          <li><strong>RPM:</strong> ${rpm.toFixed(0)}</li>
+          <li><strong>Feed Rate:</strong> ${feedRate.toFixed(2)} in/min</li>
+          <li><strong>Depth of Cut:</strong> ${depth.toFixed(3)} in</li>
+          <li><strong>Stepover:</strong> ${(stepover * 100).toFixed(0)}%</li>
+        </ul>
+      `;
+            });
+        </script>
+    </body>
+</html>

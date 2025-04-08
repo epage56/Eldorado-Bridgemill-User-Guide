@@ -1,3 +1,4 @@
+<!-- main.html -->
 <!doctype html>
 <html lang="en">
     <head>
@@ -19,32 +20,43 @@
         <!-- Centered nav menu -->
         <nav>
             <div class="nav-container">
-                <a href="#introduction">Introduction</a>
-                <a href="#milling">Milling</a>
-                <a href="#turning">Turning</a>
+                <a href="index.html">Home</a>
+                <a href="index.html#milling">Milling</a>
+                <a href="index.html#turning">Turning</a>
+                <a href="speeds-and-feeds.html">Feeds & Speeds</a>
             </div>
         </nav>
 
         <div class="container">
-            <section id="introduction" class="content-section">
-                <h2>Why Machining?</h2>
+            <section id="home" class="content-section">
+                <h2>Is Machining Necessary?</h2>
 
                 <p>
-                    Before diving into the nitty-gritty of CNC machining a part, it is
-                    important to ask yourself if it is necessary. Often a part or assembly can be designed in such a
-                    way that in-house machining is greatly reduced or removed
-                    entirely from the process. Some common motivaitons for machining parts include:
+                    Before diving into the nitty-gritty of CNC machining a part,
+                    it is important to ask yourself if it is necessary. Often a
+                    part or assembly can be designed in such a way that in-house
+                    machining is greatly reduced or removed entirely from the
+                    process. Some common motivaitons for machining parts
+                    include:
                 </p>
 
                 <ul class="feature-list">
-                    <li>Precision features (flatness on seal faces, precision holes, engineered fits)</li>
-                    <li>Material strength or stiffness (aerospace, automotive)</li>
-                    <li>Extreme temperature applications (rocket parts, superconducting magnet parts)</li>
+                    <li>
+                        Precision features (flatness on seal faces, precision
+                        holes, engineered fits)
+                    </li>
+                    <li>
+                        Material strength or stiffness (aerospace, automotive)
+                    </li>
+                    <li>
+                        Extreme temperature applications (rocket parts,
+                        superconducting magnet parts)
+                    </li>
                 </ul>
 
                 <p>
-                    After deeming machining necessary it is then time to decide
-                    if <a href="#turning" class="highlight-term">Turning</a> or
+                    After deeming machining necessary, it is time to decide if
+                    <a href="#turning" class="highlight-term">Turning</a> or
                     <a href="#milling" class="highlight-term">Milling</a> better
                     suits the manufacturing of the part.
                     <a href="#milling" class="highlight-term">Milling</a> is
@@ -54,70 +66,75 @@
                     <a href="#turning" class="highlight-term">Turning</a> is
                     suited more to parts that can be described in the
                     cylindrical coordinate system such as shafts or parts with a
-                    cylindrical surface. When designing parts it is best practice
-                    to have the manufacturing process in mind. Even when 3d
-                    printing it is helpful to visualize how each of your parts
-                    might be manufactured in a mill or lathe.
+                    cylindrical surface. When designing parts it is best
+                    practice to have the manufacturing process in mind. Even
+                    when 3d printing it is helpful to visualize how each of your
+                    parts might be manufactured in a mill or lathe.
                 </p>
             </section>
-        </div>
 
             <!-- MILLING SECTION -->
             <section id="milling" class="content-section">
                 <h2>Milling</h2>
 
                 <div class="step">
-                    <h3>
-                        Step 1: Is Your Part Manufacturable?
-                    </h3>
+                    <h3>Step 1: Is Your Part Manufacturable?</h3>
                     <p class="step-description">
-                        The Eldorado Bridgemill is a 3-axis CNC mill with a limited
-                        working volume and number of tools. Below are examples of
-                        some parts that can and can't be manufactured on the mill.
+                        The Eldorado Bridgemill is a 3-axis CNC mill with a
+                        limited working volume and number of tools. Below are
+                        examples of some parts that can and can't be
+                        manufactured on the mill.
                     </p>
                     <div class="expandable-content">
-                        <!-- insert pictures of common things that can and cant be manufactured on the mill (4 axis part, super thin things, etc.) -->
+                        <img
+                            src="pics/Manufacturable.png"
+                            alt="Example of too complex of a part"
+                            class="centered-image"
+                            style="max-width: 100%; width: 30rem; height: auto"
+                        />
                     </div>
                 </div>
 
                 <div class="step">
-                    <h3>Step 2: Tool Availibility </h3>
-                    <p class="step-description">
-                        Although some parts may be theoretically possible on a three axis machine,
-                        considering the availible tools is just as important as the machines
-                        physical limits. To simplify this process, the team has compiled a
-                        virtual (and real) tool library stocked full of common tool geometries
-                        and their feeds and speeds for common materials.
-                    </p>
-                    <div class="tool-library">
-                        <!-- Placeholder for your interactive tool library table -->
-                        <p class="placeholder-text">
-                            Interactive tool library cards be inserted here.
-                        </p>
-                    </div>
-                </div>
+                    <h3>Step 2: Tool Library</h3>
 
-                <div class="step">
-                    <h3>Step 3: Toolpathing in Fusion</h3>
+                    <div class="expandable-content">
+                        <img
+                            src="pics/tool_library.png"
+                            alt="Fictional Tool library"
+                            class="centered-image"
+                            style="max-width: 100%; width: 30rem; height: auto"
+                        />
+                    </div>
+
                     <p class="step-description">
-                        To most effectivly use the tool library that has been compiled
-                        it is convinient to use Fusion to generate toolpaths and compile
-                        them into GCODE files that are interpretable by the Bridgemill (LinuxCNC)
+                        Although some parts may be theoretically possible on a
+                        three axis machine, considering the availible tools is
+                        just as important as the machines physical limits. To
+                        simplify this process, the team has compiled a virtual
+                        (and real) tool library stocked full of common tool
+                        geometries and their feeds and speeds for common
+                        materials. To most effectivly use this library you can
+                        download it below. The tool library is built around
+                        using Fusion for CAM.
                     </p>
                     <div class="tool-download">
                         <a href="#" class="download-button"
-                            >Milling Tool Library v0.1 (Fusion)</a
+                            >Download Tool Library v0.1 (Fusion)</a
                         >
                     </div>
                 </div>
 
                 <!-- Added Fusion CAM Tutorial Section -->
                 <div class="step">
-                    <h3>Step 4: Fusion 360 CAM Tutorial </h3>
+                    <h3>Step 4: Fusion CAM Tutorial</h3>
                     <p class="step-description">
                         Follow this step-by-step guide to creating toolpaths in
-                        Fusion 360.
-                        <a href="#milling" class="highlight-term">Click here to skip to post-processing instructions</a>
+                        Fusion.
+                        <a href="#milling" class="highlight-term"
+                            >Click here to skip to post-processing
+                            instructions</a
+                        >
                     </p>
 
                     <div class="tutorial-section">
