@@ -341,6 +341,41 @@ footer p {
     box-sizing: border-box;
 }
 
+/* Style for custom dropdowns */
+select {
+    appearance: none; /* Remove native styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-color: #fff;
+    color: #222;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--color-border-light);
+    border-radius: 0.5rem;
+    outline: none;
+    width: 100%;
+    max-width: 30rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    cursor: pointer;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+select:hover {
+    border-color: var(--color-primary);
+}
+
+select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
 /* Form elements styling */
 select,
 input[type="number"] {
