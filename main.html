@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CNC Mill Guide</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Eldorado Bridgemill User Guide</h1>
+            <p>Zero experience to CNC parts in one day</p>
+        </header>
+
+        <!-- Centered nav menu -->
+        <nav>
+            <div class="nav-container">
+                <a href="#introduction">Introduction</a>
+                <a href="#milling">Milling</a>
+                <a href="#turning">Turning</a>
+            </div>
+        </nav>
+
+        <div class="container">
+            <section id="introduction" class="content-section">
+                <h2>Why Machining?</h2>
+
+                <p>
+                    Before diving into the nitty-gritty of CNC machining a part, it is
+                    important to ask yourself if it is necessary. Often a part or assembly can be designed in such a
+                    way that in-house machining is greatly reduced or removed
+                    entirely from the process. Some common motivaitons for machining parts include:
+                </p>
+
+                <ul class="feature-list">
+                    <li>Precision features (flatness on seal faces, precision holes, engineered fits)</li>
+                    <li>Material strength or stiffness (aerospace, automotive)</li>
+                    <li>Extreme temperature applications (rocket parts, superconducting magnet parts)</li>
+                </ul>
+
+                <p>
+                    After deeming machining necessary it is then time to decide
+                    if <a href="#turning" class="highlight-term">Turning</a> or
+                    <a href="#milling" class="highlight-term">Milling</a> better
+                    suits the manufacturing of the part.
+                    <a href="#milling" class="highlight-term">Milling</a> is
+                    well suited to parts that can be described in the cartesian
+                    coordinate system such as curved shapes in a plane or 3d
+                    contours.
+                    <a href="#turning" class="highlight-term">Turning</a> is
+                    suited more to parts that can be described in the
+                    cylindrical coordinate system such as shafts or parts with a
+                    cylindrical surface. When designing parts it is best practice
+                    to have the manufacturing process in mind. Even when 3d
+                    printing it is helpful to visualize how each of your parts
+                    might be manufactured in a mill or lathe.
+                </p>
+            </section>
+        </div>
+
+            <!-- MILLING SECTION -->
+            <section id="milling" class="content-section">
+                <h2>Milling</h2>
+
+                <div class="step">
+                    <h3>
+                        Step 1: Is Your Part Manufacturable?
+                    </h3>
+                    <p class="step-description">
+                        The Eldorado Bridgemill is a 3-axis CNC mill with a limited
+                        working volume and number of tools. Below are examples of
+                        some parts that can and can't be manufactured on the mill.
+                    </p>
+                    <div class="expandable-content">
+                        <!-- insert pictures of common things that can and cant be manufactured on the mill (4 axis part, super thin things, etc.) -->
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Step 2: Tool Availibility </h3>
+                    <p class="step-description">
+                        Although some parts may be theoretically possible on a three axis machine,
+                        considering the availible tools is just as important as the machines
+                        physical limits. To simplify this process, the team has compiled a
+                        virtual (and real) tool library stocked full of common tool geometries
+                        and their feeds and speeds for common materials.
+                    </p>
+                    <div class="tool-library">
+                        <!-- Placeholder for your interactive tool library table -->
+                        <p class="placeholder-text">
+                            Interactive tool library cards be inserted here.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Step 3: Toolpathing in Fusion</h3>
+                    <p class="step-description">
+                        To most effectivly use the tool library that has been compiled
+                        it is convinient to use Fusion to generate toolpaths and compile
+                        them into GCODE files that are interpretable by the Bridgemill (LinuxCNC)
+                    </p>
+                    <div class="tool-download">
+                        <a href="#" class="download-button"
+                            >Milling Tool Library v0.1 (Fusion)</a
+                        >
+                    </div>
+                </div>
+
+                <!-- Added Fusion CAM Tutorial Section -->
+                <div class="step">
+                    <h3>Step 4: Fusion 360 CAM Tutorial </h3>
+                    <p class="step-description">
+                        Follow this step-by-step guide to creating toolpaths in
+                        Fusion 360.
+                        <a href="#milling" class="highlight-term">Click here to skip to post-processing instructions</a>
+                    </p>
+
+                    <div class="tutorial-section">
+                        <div class="tutorial-step">
+                            <h4>4.1: Setup Your CAM Environment</h4>
+                            <div class="tutorial-content">
+                                <!-- Placeholder for content and images -->
+                                <p class="placeholder-text">
+                                    Content about setting up CAM environment
+                                    will go here.
+                                </p>
+                                <div class="image-placeholder">
+                                    Image will be placed here
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-step">
+                            <h4>4.2: Define Stock and Setup</h4>
+                            <div class="tutorial-content">
+                                <!-- Placeholder for content and images -->
+                                <p class="placeholder-text">
+                                    Content about defining stock will go here.
+                                </p>
+                                <div class="image-placeholder">
+                                    Image will be placed here
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-step">
+                            <h4>4.3: Create Toolpaths</h4>
+                            <div class="tutorial-content">
+                                <!-- Placeholder for content and images -->
+                                <p class="placeholder-text">
+                                    Content about creating toolpaths will go
+                                    here.
+                                </p>
+                                <div class="image-placeholder">
+                                    Image will be placed here
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-step">
+                            <h4>4.4: Simulate and Post Process</h4>
+                            <div class="tutorial-content">
+                                <!-- Placeholder for content and images -->
+                                <p class="placeholder-text">
+                                    Content about simulation and post processing
+                                    will go here.
+                                </p>
+                                <div class="image-placeholder">
+                                    Image will be placed here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TURNING SECTION -->
+            <section id="turning" class="content-section">
+                <h2>Turning</h2>
+
+                <div class="step">
+                    <h3>
+                        Step 1: Is Your Part
+                        <span class="manufacturable">Manufacturable</span>?
+                    </h3>
+                    <p class="step-description">
+                        Before starting, you need to determine if your design
+                        can be manufactured using our CNC lathe.
+                    </p>
+                    <div class="expandable-content">
+                        <!-- I'll leave this empty for you to add content about manufacturability for turning -->
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Step 2: Understand Available Tools</h3>
+                    <p class="step-description">
+                        Your manufacturing capabilities are limited by the tools
+                        available in the tool library.
+                    </p>
+                    <div class="tool-library">
+                        <!-- Placeholder for your interactive tool library table -->
+                        <p class="placeholder-text">
+                            Interactive tool library will be inserted here.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Step 3: Create Toolpath in Fusion 360</h3>
+                    <p class="step-description">
+                        Download our tool library and use it to create
+                        appropriate toolpaths in Fusion 360.
+                    </p>
+                    <div class="tool-download">
+                        <p>
+                            Download our tool library to ensure your CAM program
+                            uses the correct tools:
+                        </p>
+                        <a href="#" class="download-button"
+                            >Tool Library for Turning (Coming Soon)</a
+                        >
+                    </div>
+                </div>
+
+                <!-- Added Fusion CAM Tutorial Section for Turning -->
+                <div class="step">
+                    <h3>Step 4: Fusion 360 CAM Tutorial for Turning</h3>
+                    <p class="step-description">
+                        Follow this step-by-step guide to creating turning
+                        toolpaths in Fusion 360.
+                    </p>
+
+                    <div class="tutorial-section">
+                        <div class="tutorial-step">
+                            <h4>4.1: Setup Your Turning Environment</h4>
+                            <div class="tutorial-content">
+                                <!-- Placeholder for content and images -->
+                                <p class="placeholder-text">
+                                    Content about setting up turning environment
+                                    will go here.
+                                </p>
+                                <div class="image-placeholder">
+                                    Image will be placed here
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-step">
+                            <h4>4.2: Define Stock and Work Coordinates</h4>
+                            <div class="tutorial-content">
+                                <!-- Placeholder for content and images -->
+                                <p class="placeholder-text">
+                                    Content about defining turning stock will go
+                                    here.
+                                </p>
+                                <div class="image-placeholder">
+                                    Image will be placed here
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-step">
+                            <h4>4.3: Create Turning Operations</h4>
+                            <div class="tutorial-content">
+                                <!-- Placeholder for content and images -->
+                                <p class="placeholder-text">
+                                    Content about creating turning operations
+                                    will go here.
+                                </p>
+                                <div class="image-placeholder">
+                                    Image will be placed here
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutorial-step">
+                            <h4>4.4: Simulate and Generate NC Code</h4>
+                            <div class="tutorial-content">
+                                <!-- Placeholder for content and images -->
+                                <p class="placeholder-text">
+                                    Content about simulation and NC code
+                                    generation will go here.
+                                </p>
+                                <div class="image-placeholder">
+                                    Image will be placed here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>CNC Mill & Lathe Usage Guide | Created for Student Education</p>
+            <p>Safety First - Always Ask for Assistance When Uncertain</p>
+        </footer>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Smooth scrolling for navigation and process links
+                document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                    anchor.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute("href");
+                        const targetElement = document.querySelector(targetId);
+
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 70, // Offset for the sticky nav
+                                behavior: "smooth",
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
