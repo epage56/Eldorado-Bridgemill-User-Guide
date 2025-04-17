@@ -152,7 +152,7 @@
                                 </p>
 
                                 <img
-                                    src="ChangingTabsFinal.png"
+                                    src="MillTutorialPics/ChangingTabsFinal.png"
                                     alt="Fusion 360 Stock and Setup Menu"
                                     class="centered-image"
                                     />
@@ -160,32 +160,266 @@
                         </div>
 
                         <div class="tutorial-step">
-                            <h4>4.2: Defining Stock and Coordinate System</h4>
+                            <h4>4.2: Defining Stock and the WCS (Work Coordinate System)</h4>
                             <div class="tutorial-content">
                                 <!-- Placeholder for content and images -->
                                 <p>
-                                    Now it is time to define the stock material that 
-                                    is availble for the part virtually so that the the 
-                                    machine can be programmed to remove it correctly. 
-                                    To do this, select
+                                    Now it is time to define the material (stock) that 
+                                    you are using in real life virtually so that the the 
+                                    machine can be programmed to remove it correctly without any crashes. 
+                                    To do this, first measure the stock in real life, then click setups, new setup.
                                 </p>
-                                <div class="image-placeholder">
-                                    Image will be placed here
-                                </div>
+                                <img
+                                    src="MillTutorialPics/SetupClick.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+                                <img
+                                    src="MillTutorialPics/InsideSetupMenu.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+
+                                <p>
+                                Now it is time to define the coordinate system.
+                                In most cases it is convinent for the coordinate
+                                system to be defined off of a stock corner as 
+                                this is easy to locate with the machine in real life.
+                                </p>
+                                
+                                <p>
+                                I have chosen the following coordinate system based on
+                                how I envision i will hold the part in the vice on the mill. 
+                                learning this comes with practice but it can be picked up quickly.
+                                </p>
+                                
+                                <p>
+                                Now, the stock box must be defined correctly with respect to
+                                the measurements of the stock in real life. There are ways around 
+                                this, but it is simple to just input the actual size to avoid crashes.
+                                (also remember to square up the stock before machining!)
+                                </p>
+
+                                <img
+                                    src="MillTutorialPics/DefiningStockSize.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+
+                                <p>
+                                After defining the stock size and the WCS (work coordinate system),
+                                it is time to move onto the fun part - toolpathing!
+                                </p>
                             </div>
                         </div>
 
                         <div class="tutorial-step">
-                            <h4>4.4: Simulate and Post Process</h4>
+                            <h4>4.3: Tool Library</h4>
                             <div class="tutorial-content">
                                 <!-- Placeholder for content and images -->
-                                <p class="placeholder-text">
-                                    Content about simulation and post processing
-                                    will go here.
+                                <p>
+                                    To make your life easier, we have put together a tool library for the machine. 
+                                    This tool library not only includes a list of all available tools for use to make 
+                                    parts but also includes cutting profiles (feeds and speeds) for different operation
+                                    types (slotting, roughing, finishing) and materials (aluminum, steel, delrin). 
+                                    To get started, download the latest version of the tool library directly 
+                                    with the button below.
                                 </p>
-                                <div class="image-placeholder">
-                                    Image will be placed here
+                                <div class="tool-download">
+                                    <a href="#" class="download-button"
+                                        >Download Tool Library v0.1 (Fusion)</a
+                                    >
                                 </div>
+                                
+                                <p>
+                                    After downloading the tool library, we must import it into fusion. To do this
+                                    click on the tool library tab.
+                                </p>
+
+                                <img
+                                    src="MillTutorialPics/ToolLibraryTabWhereis.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+
+                                <img
+                                    src="MillTutorialPics/ToolLibraryImporting.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+                                
+                                <p>
+                                    Then, select import and navigate to where you downloaded the tool library from
+                                    the link above. 
+                                </p>
+
+                                <img
+                                    src="MillTutorialPics/ToolLibraryIndownloads.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+                                <p>
+                                    Finally, you can peruse the tool library to see all of the tools and data that will 
+                                    be used in the toolpathing process. 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tutorial-step">
+                            <h4>4.4: Toolpathing</h4>
+                            <div class="tutorial-content">
+                                <!-- Placeholder for content and images -->
+                                <p>
+                                    Now for the fun part, programming the operation to best 
+                                    subtract away material from the stock as it is defined, leaving your part.
+                                    For this example part, it is clear that the operation type needed for the large
+                                    pocket in the middle of the part is a 2d pocket. Common operation types are 2 and 3D pocketing,
+                                    boring, 2 and 3D contouring, and facing. The setup for all of the different types 
+                                    is simple and clear to click through with Fusion. 
+                                </p>
+
+                                <img
+                                    src="MillTutorialPics/ToolpathingPickingPocket.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+
+                                <p>
+                                    Now it is time to select a tool for the toolpath from the tool libary.
+                                    Because this pocket has a flat bottom with no chamfer on its edge, a flat end mill
+                                    was chosen. The desired material to make this part is aluminum, so a two flute carbide end mill was 
+                                    chosen. Click on the select button next to tool in the above image.                                        After navigating to the El Dorado tool library, select a suitable tool 
+                                    After navigating to the El Dorado tool library, select a suitable tool.  
+
+                                </p>
+                                
+                                <img
+                                    src="MillTutorialPics/ToolpathingPickingTool.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+                                
+                                <p>
+                                    In the absense of a coolant system no coolant can be used, 
+                                    so no need to uncheck this box as the coolant will never be fired off.
+                                    Coolant is available on many other machines and allows for faster cycle times 
+                                    and often better surface finishes.
+                                </p>
+
+                                <p>
+                                    Next, move to the geometry tab and select the feature of interest. In this case
+                                    it is the lower face of the pocket. There are different ways to specify a feature 
+                                    and fusion is pretty forgiving.
+                                </p>
+
+                                <img
+                                    src="MillTutorialPics/ToolpathingSelectingPocket.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+
+                                <p>
+                                    Now that the geometry has been selected, it is time to evaluate other parameters
+                                    of the toolpath. Two important adjustments are the number of passes and 
+                                    if you want to have a "finishing" pass. The default setting for a pocket operation 
+                                    is for the toolpath to be completed at one depth. While this is theoretically possible 
+                                    sometimes, it is not a best practice as the cutting force is high and machine and tool wear 
+                                    are increased. The main issue with doing this on this machine is that the spindle motor
+                                    may stall and ruin the part or you may break an end mill with too high of a cutting force.
+                                </p>
+
+                                <p>
+                                    This leaves us at the multiple depths setting to solve this issue. Typically a safe cut depth is 1-2mm
+                                    for this machine and/or a new user. This can be less for harder materials such as steel and greater
+                                    for softer materials such as plastics. Sometimes this value is auto-populated based on 
+                                    tool data.
+                                </p>
+
+                                <img
+                                    src="MillTutorialPics/ToolpathingMultipleDepths.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+
+                                <img
+                                    src="MillTutorialPics/ToolpathingMaximumRoughingStepdown.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+                                
+
+                                <p>
+                                    Finally you can hit ok after realizing that a finishing pass is not needed for your part
+                                    and then view and animate the simulated toolpath.
+                                </p>
+                                
+                                <img
+                                    src="MillTutorialPics/ToolpathingFinishedPocket.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+
+                                <p>
+                                    If the part needs more than one operation to finish (like this one),
+                                    then adding another operation is simple.
+                                </p>
+                                
+                                <p>
+                                    Select the type of operation that is needed from the navbar menu and then 
+                                    go through the dialog again. The feature of interest that was not machined
+                                    with the inital pocket operation is the small "open pocket" on the bottom edge. 
+                                    This feature can be machined with a 2d countour operation. 
+                                </p>
+
+                                <img
+                                    src="MillTutorialPics/ToolpathingFinishedPocket.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+                                <p>
+                                    The steps are similar to the pocket operation: Select operation type, choose tool from
+                                    tool library, choose geometry to machine, then modify features such as stepdown amount 
+                                    and if there is a finishing pass. 
+                                </p>
+
+                                <img
+                                    src="MillTutorialPics/Toolpathing2dContour.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+
+                                <img
+                                    src="MillTutorialPics/Toolpathing2dContourtool.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+
+                                <img
+                                    src="MillTutorialPics/Toolpathing2dContourSelecton.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+
+                                <img
+                                    src="MillTutorialPics/Toolpathing2dContourMultipleDepths.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+
+                                <img
+                                    src="MillTutorialPics/Toolpathing2dcontourMaximumRoughingStepdown.png"
+                                    alt="Fusion 360 Stock and Setup Menu"
+                                    class="centered-image"
+                                    />
+                            
+                            </div>
+                        </div>
+
+                        <div class="tutorial-step">
+                            <h4>4.5: PostProcessing</h4>
+                            <div class="tutorial-content">
+                                <!-- Placeholder for content and images -->
+                                <p>
+                                
                             </div>
                         </div>
                     </div>
